@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Converter</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+        .navbar-custom {
+            background-color: #003366;
+
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+
+        }
+
+        .navbar-brand {
+            color: #ffffff;
+
+        }
+
+        .navbar-brand img {
+            height: 40px;
+
+        }
+
+        .hero-section {
+            background-image: url('MainImage.jpg');
+
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            color: white;
+
+            padding-left: 20px;
+
+        }
+
+        .hero-section h1 {
+            font-size: 3rem;
+
+            margin-bottom: 20px;
+        }
+
+        .converter-form {
+            background-color: rgba(255, 255, 255, 0.8);
+
+            border: 2px solid #003366;
+
+            padding: 15px;
+            padding-left: 45px;
+            margin-top: 60px;
+            margin-left: 50px;
+            border-radius: 10px;
+            width: 650px;
+
+            height: auto;
+        }
+
+        .converter-form h2 {
+            color: #003366;
+
+        }
+
+        .blue-text {
+            color: blue;
+
+        }
+
+        .info-section {
+            margin: 50px;
+            margin-top: 130px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .faq-section {
+            background-image: url('faq.jpg');
+
+            background-size: cover;
+            background-position: center;
+            height: 400px;
+
+            display: flex;
+            align-items: center;
+            justify-content: flex-start;
+
+            color: white;
+
+            padding-left: 20px;
+
+            margin: 50px;
+            margin-bottom: 160px;
+            padding: 20px;
+            border-radius: 10px;
+        }
+
+        .faq-content {
+            background-color: rgba(255, 255, 255, 0.8);
+
+            border: 2px solid #003366;
+
+            padding: 15px;
+            padding-left: 45px;
+            margin-top: 260px;
+            margin-bottom: 200px;
+
+            margin-left: 0px;
+            border-radius: 10px;
+            width: 950px;
+
+            height: auto;
+
+            color: #003366;
+        }
+
+        .hero-section h1,
+        .faq-content h2 {
+            font-size: 3rem;
+
+            margin-bottom: 20px;
+        }
+
+        .image-gallery-section {
+            margin: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            overflow-x: auto;
+            white-space: nowrap;
+        }
+
+        .image-gallery-section img {
+            width: 300px;
+            height: 200px;
+            object-fit: cover;
+            margin-right: 10px;
+            display: inline-block;
+            border-radius: 10px;
+        }
+
+        .explore-section {
+            margin: 50px;
+            padding: 20px;
+            border-radius: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+        }
+
+        .explore-section h2 {
+            color: #003366;
+            margin-bottom: 20px;
+        }
+
+        .explore-columns {
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .explore-column {
+            width: 32%;
+            background-color: rgba(255, 255, 255, 0.9);
+            border: 2px solid #003366;
+            padding: 15px;
+            border-radius: 10px;
+        }
+
+        .explore-column h3 {
+            color: #003366;
+            margin-bottom: 10px;
+        }
+
+        .footer-section {
+            background-color: #003366;
+            color: white;
+            padding: 20px 50px;
+        }
+
+        .footer-column {
+            width: 25%;
+            margin-bottom: 20px;
+        }
+
+        .footer-column h4 {
+            border-bottom: 1px solid white;
+            padding-bottom: 10px;
+            margin-bottom: 15px;
+        }
+
+        .footer-column ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 10px;
+        }
+
+        .footer-column ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .footer-column ul li a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 10px;
+            border-top: 1px solid white;
+        }
+
+        .footer-icons img {
+            width: 30px;
+            height: 30px;
+            margin: 5px;
+        }
+
+        @media (max-width: 768px) {
+
+            .hero-section,
+            .faq-section {
+                height: 300px;
+                padding-left: 10px;
+            }
+
+            .hero-section h1,
+            .faq-content h2 {
+                font-size: 2rem;
+            }
+
+            .converter-form,
+            .faq-content {
+                width: 90%;
+                margin-left: 5%;
+                padding-left: 20px;
+            }
+
+            .info-section,
+            .faq-section {
+                margin: 20px;
+                padding: 15px;
+            }
+
+            .image-gallery-section img {
+                width: 200px;
+                height: 150px;
+            }
+
+            .explore-columns {
+                flex-direction: column;
+            }
+
+            .explore-column {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+
+            .footer-column {
+                width: 100%;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .hero-section,
+            .faq-section {
+                height: 250px;
+                padding-left: 10px;
+            }
+
+            .hero-section h1,
+            .faq-content h2 {
+                font-size: 1.5rem;
+            }
+
+            .converter-form,
+            .faq-content {
+                width: 90%;
+                margin-left: 5%;
+                padding-left: 10px;
+            }
+
+            .info-section,
+            .faq-section {
+                margin: 10px;
+                padding: 10px;
+            }
+
+            .image-gallery-section img {
+                width: 150px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-custom">
+        <a class="navbar-brand" href="#">
+            <img src="logojpg.jpg" alt="Logo"> Reecocefe Pvt
+        </a>
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav ml-auto">
+
+            </ul>
+        </div>
+    </nav>
+
+    <section class="hero-section">
+        <div>
+            <h1>Welcome to Area Converter</h1>
+            <div class="converter-form">
+                <h2 class="blue-text">Area Converter</h2>
+                <p class="blue-text">Enter the value and select desired units:</p>
+                <form id="converterForm">
+                    <div class="form-group">
+                        <label for="valueInput" class="blue-text">Value</label>
+                        <input type="number" class="form-control" id="valueInput" placeholder="Enter value">
+                    </div>
+                    <div class="form-group">
+                        <label for="fromUnitSelect" style="color: black;">From</label>
+                        <select class="form-control" id="fromUnitSelect">
+                            <option>Square Feet</option>
+                            <option>Acres</option>
+                            <option>Hectares</option>
+                            <option>Square Meters</option>
+                            <option>Cents</option>
+                            <option>Guntas</option>
+                            <option>Kanals</option>
+                            <option>Marlas</option>
+                            <option>Gaj</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="toUnitSelect" style="color: black;">To</label>
+                        <select class="form-control" id="toUnitSelect">
+                            <option>Square Feet</option>
+                            <option>Acres</option>
+                            <option>Hectares</option>
+                            <option>Square Meters</option>
+                            <option>Cents</option>
+                            <option>Guntas</option>
+                            <option>Kanals</option>
+                            <option>Marlas</option>
+                            <option>Gaj</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Convert</button>
+                </form>
+                <p id="result" class="mt-3" style="color: black;"></p>
+            </div>
+        </div>
+    </section>
+
+    <section class="info-section">
+        <h2>About Land Area Conversion</h2>
+        <p>Land measurement in India has always been done using various local and native measurement units such as
+            Bigha,
+            Ground, Kanal, etc, depending upon the state. These are locally set benchmarks, which have been in usage for
+            a long time. These unit measurements vary greatly across regions, which is why converting them to
+            international standard units, or globally accepted units, also known as SI units is of paramount importance.
+            In addition, to understand the exact area of land as well as to calculate the value of land, converting
+            local
+            units into SI units, using a land area calculator, is advisable.</p>
+        <p>Some of the common land measurement units across India are hectares, acres, square meters, square yards.
+            Other
+            than this, Bigha, Marla, Cent, Guntha, Ground are regional units and their size varies from state to state.
+        </p>
+        <h3>Land area measurement units used in North India</h3>
+        <p>Bigha, Biswa, Biswansi, Killa, Ghumaon, Kanal are popular land area measurement units used in Haryana, Uttar
+            Pradesh, Uttarakhand, Punjab, etc. To convert these local units into SI units, use the area conversion
+            calculator.</p>
+        <h3>Land area measurement units used in South India</h3>
+        <p>Ankanam, Cent, Ground, Guntha, Kuncham are popular land measurement units used in states such as Tamil Nadu,
+            Andhra Pradesh, Kerala, Karnataka, etc. Convert these local units into globally accepted measurement units
+            using the area calculator.</p>
+        <h3>Land area measurement units used in East India</h3>
+        <p>Chatak, Decimal, Dhur, Kattha, Lecha are the land measurement units popular in eastern states like West
+            Bengal,
+            Tripura, Assam, etc. Use an area converter for conversion.</p>
+        <h3>Land area measurement units used in West India</h3>
+        <p>Bigha, Biswa, Biswansi are popular land area measurement units used in western states of India such as
+            Rajasthan, Gujarat, Maharashtra, etc. Use an area conversion calculator for conversion.</p>
+    </section>
+
+    <section class="faq-section">
+        <div class="faq-content">
+            <h2>FAQS ON AREA MEASUREMENT UNITS</h2>
+            <h3>Which land measurement units are used in North India?</h3>
+            <p>Some of the popular land measurement units used in North India are Bigha, Biswa, Killa, Ghumaon,
+                Biswansi,
+                Kanal and many more.</p>
+            <h3>Which land measurement units are used in East India?</h3>
+            <p>In East India, people usually use Chatak, Dhur, Kattha, Lacha for land measurement purposes.</p>
+            <h3>Which land measurement units are used in West India?</h3>
+            <p>Bigha, Biswa, Biswansi are some of the commonly used land measurement units in West India.</p>
+            <h3>Which land measurement units are used in Central India?</h3>
+            <p>People mostly use Bigha and Kattha in Central India for measuring land parcels.</p>
+            <h3>Which land measurement units are used in South India?</h3>
+            <p>For land measurement purposes, people use Ankanam, Cent, Ground, Guntha, Kuncham, etc. in South India.
+            </p>
+        </div>
+    </section>
+
+    <section class="image-gallery-section">
+        <h2>Real Estate Construction Images</h2>
+        <div class="image-gallery">
+            <img src="img1.jpg" alt="Construction Image 1">
+            <img src="img1.jpg" alt="Construction Image 2">
+            <img src="img2.jpg" alt="Construction Image 3">
+            <img src="img1.jpg" alt="Construction Image 4">
+            <img src="img1.jpg" alt="Construction Image 5">
+            <img src="img1.jpg" alt="Construction Image 6">
+            <img src="img1.jpg" alt="Construction Image 7">
+            <img src="img1.jpg" alt="Construction Image 8">
+            <img src="img1.jpg" alt="Construction Image 9">
+            <img src="img1.jpg" alt="Construction Image 10">
+        </div>
+    </section>
+
+    <section class="explore-section">
+        <h2>Explore on Reecocefe</h2>
+        <div class="explore-columns">
+            <div class="explore-column">
+                <h3>COMMERCIAL LANDS</h3>
+                <ul>
+                    <li>Commercial land for sale in Greater Noida</li>
+                    <li>Commercial land for sale in Faridabad</li>
+                    <li>Commercial land for sale in Navi Mumbai</li>
+                    <li>Commercial land for sale in Ahmedabad West</li>
+                    <li>Commercial land for sale in Pune</li>
+                    <li>Commercial land for sale in Gurgaon</li>
+                    <li>Commercial land for sale in Western Mumbai</li>
+                    <li>Commercial land for sale in Noida</li>
+                    <li>View Less</li>
+                </ul>
+            </div>
+            <div class="explore-column">
+                <h3>AGRICULTURAL LANDS</h3>
+                <ul>
+                    <li>Agriculture land for sale in Greater Noida</li>
+                    <li>Agriculture land for sale in Navi Mumbai</li>
+                    <li>Agriculture land for sale in Chennai South</li>
+                    <li>Agriculture land for sale in Pune</li>
+                    <li>Agriculture land for sale in Gurgaon</li>
+                    <li>Agriculture land for sale in Hyderabad</li>
+                    <li>Agriculture land for sale in Western Mumbai</li>
+                    <li>Agriculture land for sale in Noida</li>
+                    <li>View Less</li>
+                </ul>
+            </div>
+            <div class="explore-column">
+                <h3>INDUSTRIAL LANDS</h3>
+                <ul>
+                    <li>Industrial land for sale in Greater Noida</li>
+                    <li>Industrial land for sale in Navi Mumbai</li>
+                    <li>Industrial land for sale in Chennai South</li>
+                    <li>Industrial land for sale in Pune</li>
+                    <li>Industrial land for sale in Gurgaon</li>
+                    <li>Industrial land for sale in Hyderabad</li>
+                    <li>Industrial land for sale in Western Mumbai</li>
+                    <li>Industrial land for sale in Noida</li>
+                    <li>View Less</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer-section">
+        <div class="row">
+            <div class="footer-column">
+                <h4>Reecocefe</h4>
+                <ul>
+                    <li><a href="#">Mobile Apps</a></li>
+                    <li><a href="#">Our Services</a></li>
+                    <li><a href="#">Price Trends</a></li>
+                    <li><a href="#">Post your Property</a></li>
+                    <li><a href="#">Real Estate Investments</a></li>
+                    <li><a href="#">Builders in India</a></li>
+                    <li><a href="#">Area Converter</a></li>
+                    <li><a href="#">Articles</a></li>
+                    <li><a href="#">Rent Receipt</a></li>
+                    <li><a href="#">Customer Service</a></li>
+                    <li><a href="#">Sitemap</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Company</h4>
+                <ul>
+                    <li><a href="#">About us</a></li>
+                    <li><a href="#">Contact us</a></li>
+                    <li><a href="#">Careers with us</a></li>
+                    <li><a href="#">Terms & Conditions</a></li>
+                    <li><a href="#">Request Info</a></li>
+                    <li><a href="#">Feedback</a></li>
+                    <li><a href="#">Report a problem</a></li>
+                    <li><a href="#">Testimonials</a></li>
+                    <li><a href="#">Privacy Policy</a></li>
+                    <li><a href="#">Summons/Notices</a></li>
+                    <li><a href="#">Grievances</a></li>
+                    <li><a href="#">Safety Guide</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Our Partners</h4>
+                <ul>
+                    <li><a href="#">Naukri.com - Jobs in India</a></li>
+                    <li><a href="#">Naukrigulf.com - Jobs in middle east</a></li>
+                    <li><a href="#">Jeevansathi.com - Matrimonials</a></li>
+                    <li><a href="#">Brijj.com - Professional Networking</a></li>
+                    <li><a href="#">Shiksha.com - Education Career Info</a></li>
+                    <li><a href="#">Policybazaar.com - Insurance India</a></li>
+                    <li><a href="#">Meritnation.com - Online Educational Assessment</a></li>
+                    <li><a href="#">PaisaBazaar.com</a></li>
+                    <li><a href="#">AmbitionBox.com</a></li>
+                    <li><a href="#">FirstNaukri.com - A jobsite for campus hiring</a></li>
+                    <li><a href="#">Jobhai.com – Find Jobs Near You</a></li>
+                    <li><a href="#">Techminis.com - Tech news on the go</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h4>Contact Us</h4>
+                <p>Toll Free - 1800 41 99099</p>
+                <p>9:30 AM to 6:30 PM (Mon-Sun)</p>
+                <p>Email - <a href="mailto:feedback@Reecocefe.com">feedback@Reecocefe.com</a></p>
+                <h4>Connect with us</h4>
+                <div class="footer-icons">
+                    <a href="#"><img src="facebook-icon.png" alt="Facebook"></a>
+                    <a href="#"><img src="twitter-icon.png" alt="Twitter"></a>
+                    <a href="#"><img src="instagram-icon.png" alt="Instagram"></a>
+                    <a href="#"><img src="linkedin-icon.png" alt="LinkedIn"></a>
+                </div>
+                <h4>Download the App</h4>
+                <a href="#"><img src="android-app-icon.png" alt="Reecocefe Android App"></a>
+
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>Usage of Reecocefe.com to upload content showing area in non standard units or which enables targeting by
+                religion/community/caste/race is prohibited. Please report inappropriate content by writing to us at <a
+                    href="mailto:report@abuse.com">report abuse</a></p>
+            <p>All trademarks are the property of their respective owners.</p>
+            <p>All rights reserved - Info Edge (India) Ltd. A naukri.com group venture</p>
+        </div>
+    </footer>
+
+    <script>
+        document.getElementById('converterForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            const value = parseFloat(document.getElementById('valueInput').value);
+            const fromUnit = document.getElementById('fromUnitSelect').value;
+            const toUnit = document.getElementById('toUnitSelect').value;
+            let conversionFactor = 1; // Default conversion factor
+
+            // Define conversion factors for each unit pair
+            const conversionFactors = {
+                'Square Feet': {
+                    'Square Feet': 1,
+                    'Acres': 2.2957e-5,
+                    'Hectares': 9.2903e-6,
+                    'Square Meters': 0.092903,
+                    'Cents': 0.00229568,
+                    'Guntas': 0.000918273,
+                    'Kanals': 4.5425e-5,
+                    'Marlas': 0.00181809,
+                    'Gaj': 0.111111
+                },
+                'Acres': {
+                    'Square Feet': 43560,
+                    'Acres': 1,
+                    'Hectares': 0.404686,
+                    'Square Meters': 4046.86,
+                    'Cents': 100,
+                    'Guntas': 40,
+                    'Kanals': 2.0,
+                    'Marlas': 160,
+                    'Gaj': 4840
+                },
+                'Hectares': {
+                    'Square Feet': 107639,
+                    'Acres': 2.47105,
+                    'Hectares': 1,
+                    'Square Meters': 10000,
+                    'Cents': 247.105,
+                    'Guntas': 99.1736,
+                    'Kanals': 4.945,
+                    'Marlas': 394,
+                    'Gaj': 11959.89
+                },
+                'Square Meters': {
+                    'Square Feet': 10.7639,
+                    'Acres': 0.000247105,
+                    'Hectares': 0.0001,
+                    'Square Meters': 1,
+                    'Cents': 0.0247105,
+                    'Guntas': 0.00991736,
+                    'Kanals': 0.000494211,
+                    'Marlas': 0.0197684,
+                    'Gaj': 1.19599
+                },
+                'Cents': {
+                    'Square Feet': 435.6,
+                    'Acres': 0.01,
+                    'Hectares': 0.00404686,
+                    'Square Meters': 40.4686,
+                    'Cents': 1,
+                    'Guntas': 0.4,
+                    'Kanals': 0.02,
+                    'Marlas': 1.6,
+                    'Gaj': 48.4
+                },
+                'Guntas': {
+                    'Square Feet': 1089,
+                    'Acres': 0.025,
+                    'Hectares': 0.010117,
+                    'Square Meters': 101.171,
+                    'Cents': 2.5,
+                    'Guntas': 1,
+                    'Kanals': 0.05,
+                    'Marlas': 4,
+                    'Gaj': 121
+                },
+                'Kanals': {
+                    'Square Feet': 5445,
+                    'Acres': 0.5,
+                    'Hectares': 0.202343,
+                    'Square Meters': 2023.43,
+                    'Cents': 50,
+                    'Guntas': 20,
+                    'Kanals': 1,
+                    'Marlas': 80,
+                    'Gaj': 605
+                },
+                'Marlas': {
+                    'Square Feet': 272.25,
+                    'Acres': 0.00625,
+                    'Hectares': 0.00252929,
+                    'Square Meters': 25.2929,
+                    'Cents': 0.625,
+                    'Guntas': 0.25,
+                    'Kanals': 0.0125,
+                    'Marlas': 1,
+                    'Gaj': 30.25
+                },
+                'Gaj': {
+                    'Square Feet': 9,
+                    'Acres': 0.000206611,
+                    'Hectares': 8.3613e-5,
+                    'Square Meters': 0.83613,
+                    'Cents': 0.0206611,
+                    'Guntas': 0.00826446,
+                    'Kanals': 0.000412834,
+                    'Marlas': 0.0165134,
+                    'Gaj': 1
+                }
+            };
+
+
+            if (conversionFactors[fromUnit] && conversionFactors[fromUnit][toUnit]) {
+                conversionFactor = conversionFactors[fromUnit][toUnit];
+            }
+
+            const convertedValue = value * conversionFactor;
+            document.getElementById('result').innerText = `${value} ${fromUnit} is equal to ${convertedValue} ${toUnit}`;
+        });
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Area Converter</title>
+</head>
+<body>
+    <h1>Area Converter</h1>
+    <form id="converterForm">
+        <label for="areaValue">Enter Value:</label>
+        <input type="number" id="areaValue" name="areaValue" required>
+
+        <label for="fromUnit">From:</label>
+        <select name="fromUnit" id="fromUnit">
+            <option value="sqft">Square Feet</option>
+            <option value="acre">Acres</option>
+            <option value="hectare">Hectares</option>
+            <option value="sqm">Square Meters</option>
+            <option value="cent">Cents</option>
+            <option value="gunta">Guntas</option>
+            <option value="kanal">Kanals</option>
+            <option value="marla">Marlas</option>
+            <option value="gaj">Gaj</option> <!-- Gaj added here -->
+        </select>
+
+        <label for="toUnit">To:</label>
+        <select name="toUnit" id="toUnit">
+            <option value="sqft">Square Feet</option>
+            <option value="acre">Acres</option>
+            <option value="hectare">Hectares</option>
+            <option value="sqm">Square Meters</option>
+            <option value="cent">Cents</option>
+            <option value="gunta">Guntas</option>
+            <option value="kanal">Kanals</option>
+            <option value="marla">Marlas</option>
+            <option value="gaj">Gaj</option> <!-- Gaj added here -->
+        </select>
+
+        <button type="button" onclick="convertArea()">Convert</button>
+    </form>
+
+    <h2>Converted Value: <span id="convertedValue"></span></h2>
+
+    <script>
+        // Conversion rates relative to Square Feet
+        const conversionRates = {
+            sqft: 1,
+            acre: 43560,
+            hectare: 107639.104,
+            sqm: 10.7639,
+            cent: 435.6,
+            gunta: 1089,
+            kanal: 5445,
+            marla: 272.25,
+            gaj: 9 // 1 Gaj = 9 Square Feet
+        };
+
+        function convertArea() {
+            const areaValue = parseFloat(document.getElementById('areaValue').value);
+            const fromUnit = document.getElementById('fromUnit').value;
+            const toUnit = document.getElementById('toUnit').value;
+
+            // Convert from the original unit to square feet
+            const valueInSqft = areaValue * conversionRates[fromUnit];
+
+            // Convert from square feet to the target unit
+            const convertedValue = valueInSqft / conversionRates[toUnit];
+
+            // Display the converted value
+            document.getElementById('convertedValue').textContent = convertedValue.toFixed(4);
+        }
+    </script>
+</body>
+</html>
